@@ -89,7 +89,7 @@ class LogoConnection < DJS::DJSConnection
       when 'REPEAT'
         count, i = get_param(tokens, i + 1)
         body, i = tokens_in_brackets(:square, tokens, i)
-        count.times {
+        count.to_i.times {
           stopped, degree, x, y, pen = parse(body, degree, x, y, pen)
           break if stopped
         }
